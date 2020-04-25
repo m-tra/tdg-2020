@@ -48,23 +48,6 @@ public class Chargement {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
- 
-        try {
-            resultat.writetoFile(String.valueOf(nbsommets)+" sommets");
-            resultat.writetoFile(String.valueOf(nbarcs)+" arcs");
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        for(int i = 0; i<nbarcs; i++){
-            try {
-                String debut = String.valueOf(nouveaugraphe.getArcs().get(i).getDebut());
-                String fin = String.valueOf(nouveaugraphe.getArcs().get(i).getFin());
-                String valeur = String.valueOf(nouveaugraphe.getArcs().get(i).getValeur());
-                resultat.writetoFile(debut + " -> " + fin + " = "+ valeur);
-            } catch (IOException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
         return nouveaugraphe;
     }
 
