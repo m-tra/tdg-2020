@@ -13,7 +13,7 @@ public class Main {
             Builder ecrit;
             System.out.println("Entrez un caractère pour continuer et tapez 0 pour quitter");
             ngraphe = in.nextLine();
-            if (!ngraphe.equals(0)) {
+            if (!ngraphe.equals("0")) {
                 do {
                     System.out.println("Choisissez le graphe à traiter (entier entre 1 et 13)");
                     ngraphe = in.nextLine();
@@ -31,8 +31,10 @@ public class Main {
                 ecrit.Circuit();
 
             }
-        } while (exit.equals(0));
-        System.exit(0);
+            else{
+                System.exit(0);
+            }
+        } while (!exit.equals("0"));
     }
 
 }
