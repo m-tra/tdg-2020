@@ -12,13 +12,11 @@ public class Chargement {
     private String nomgraphe;
     private Graphe graphelu;
     
-    private Graphe Initialize(String ngraphe) {
+    public Graphe Initialize(String ngraphe) {
         int nbsommets=0, nbarcs=0;
         
         Graphe nouveaugraphe = null;
-        String s = "graphe " + ngraphe + ".txt";
-        
-        WriteFile resultat = new WriteFile("./resultats/resultat graphe" + ngraphe + ".txt");
+        String s = "graphe " + ngraphe + ".txt";        
         try (Scanner parser = new Scanner(new FileReader("./graphes/"+s))) {
             ArrayList<Arc> arcs = new ArrayList<>();
             ArrayList<Sommet> sommets = new ArrayList<>();

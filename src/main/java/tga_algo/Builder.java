@@ -104,12 +104,17 @@ public class Builder {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public void Circuit(){
+
+    public void Circuit() {
+        builder = new StringBuilder();
         Circuit circuit = new Circuit();
-        if(circuit.exist_cicruit(graphe) == true)
+        builder.append("\n");
+        if (circuit.exist_cicruit(graphe) == true) {
             System.out.println("il y a un circuit");
+            builder.append("Il y a un circuit");
+        }
         else
             System.out.println("il n'y a pas de circuit");
-        
+
     }
 }

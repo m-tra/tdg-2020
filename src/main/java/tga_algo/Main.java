@@ -19,7 +19,7 @@ public class Main {
         Chargement nvgraphe = new Chargement(ngraphe);
         actuel = nvgraphe.getGraphelu();
         ecrit = new Builder(actuel, ngraphe);
-        ecrit.carac();        
+        ecrit.carac();
         ecrit.arcs();
         System.out.println("Ecriture du tableau 2D dans le fichier");
         ecrit.matrices();
