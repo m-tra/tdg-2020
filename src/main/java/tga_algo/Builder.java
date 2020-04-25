@@ -110,11 +110,11 @@ public class Builder {
         Circuit circuit = new Circuit();
         builder.append("\n");
         if (circuit.exist_cicruit(graphe) == true) {
-            System.out.println("il y a un circuit");
-            builder.append("Il y a un circuit");
+            System.out.println("il y a au moins un circuit");
+            builder.append("Il y a au moins un circuit");
         }
         else
             System.out.println("il n'y a pas de circuit");
-
+        builder.append("Il n'y a pas de circuit");
     }
 }
