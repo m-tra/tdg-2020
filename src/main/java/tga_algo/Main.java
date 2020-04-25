@@ -23,7 +23,7 @@ public class Main {
         ecrit.arcs();
         System.out.println("Ecriture du tableau 2D dans le fichier");
         ecrit.matrices();
-        
+        ecrit.Circuit();
         System.exit(0);
     }
 }
