@@ -1,6 +1,8 @@
 package tga_algo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Circuit {
 
@@ -8,25 +10,38 @@ public class Circuit {
     }
 
     public boolean exist_cicruit(Graphe graphe) {
-        int nb_sommets;
-        ArrayList<Integer> enlever = new ArrayList<>();
-        nb_sommets = graphe.getNb_sommets();
-        if (nb_sommets <= 0) {
+        List<Integer> rmv = new ArrayList<>();
+        SommetVide S = new SommetVide();
+        do {
+            rmv.clear();
+            for (int i = 0; i < graphe.getSommets().size(); i++) {
+                if (graphe.getSommets().get(i).getPredec().isEmpty()) {
+                    rmv.add(graphe.getSommets().get(i).getValeur());
+                } else if (graphe.getSommets().get(i).getSuiv().isEmpty()) {
+                    rmv.add(graphe.getSommets().get(i).getValeur());
+                }
+            }
+            for (int i = 0; i < graphe.getSommets().size(); i++) {
+                for (int j = 0; j < rmv.size(); j++) {
+                    graphe.getSommets().get(i).removePre(rmv.get(j));
+                    graphe.getSommets().get(i).removeSuiv(rmv.get(j));
+                }
+            }
+            System.out.println(graphe.getSommets().size());
+            for (int j = 0; j < graphe.getSommets().size(); j++) {
+                for (int i = 0; i < rmv.size(); i++) {
+                    if (graphe.getSommets().get(j).getValeur() == rmv.get(i)) {
+                            graphe.getSommets().set(j, S);
+                    }
+                }
+            }
+            graphe.getSommets().removeAll(Collections.singleton(S));
+            System.out.println("rmv " + rmv);
+        } while (!rmv.isEmpty());
+        if (graphe.getSommets().isEmpty()) {
             return false;
-        }
-        for (int i = 0; i < nb_sommets; i++) {
-            if (graphe.getSommets().get(i).getPredec().isEmpty() || graphe.getSommets().get(i).getSuiv().isEmpty()) {
-                enlever.add(i);
-            }
-        }
-        if (!enlever.isEmpty()) {
-            for (int i = 0; i < enlever.size(); i++) {
-                graphe.getSommets().remove(i);
-            }
-        }
-        if (graphe.getNb_sommets() == nb_sommets) {
+        } else {
             return true;
         }
-        return exist_cicruit(graphe);
     }
 }
