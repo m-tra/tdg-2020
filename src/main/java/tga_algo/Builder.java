@@ -15,7 +15,7 @@ public class Builder {
     private Graphe graphe;
     private int nbarcs;
     private int nbsommets;
-    
+    private boolean presencecircuit;
 
     public Builder(Graphe graphe, String ngraphe) {
         this.graphe = graphe;
@@ -114,8 +114,10 @@ public class Builder {
         if (circuit.exist_cicruit(graphe) == true) {
             System.out.println("il y a au moins un circuit");
             builder.append("Il y a au moins un circuit");
+            presencecircuit = true;
         } else {
             System.out.println("il n'y a pas de circuit");
+            presencecircuit = false;
         }
         try {
             resultat.writetoFile(builder.toString());
@@ -131,7 +133,7 @@ public class Builder {
         ArrayList<ArrayList<Integer>> rangs;
         rangs = Rang.rang(clone);
         builder.append("\n");
-        for(int i =0; i<rangs.size()-1; i++){
+        for (int i = 0; i < rangs.size() - 1; i++) {
             builder.append("rang ").append(i).append(" :");
             builder.append(rangs.get(i)).append("\n");
         }
@@ -141,4 +143,55 @@ public class Builder {
             Logger.getLogger(Builder.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public void Ordonnacement() {
+        builder = new StringBuilder();
+        boolean entrees = Entree.Nb_entrees(graphe);
+        System.out.println("entree " + entrees + "\n");
+        boolean sorties = Sortie.Nb_sorties(graphe);
+        System.out.println("sorties " + sorties + "\n");
+        boolean verifentree = Entree.Incidence(graphe);
+        System.out.println("verifentreee " + verifentree + "\n");
+        builder.append("\n");
+        boolean valeurarc = ValeurArc.valeurexterieur(graphe);
+        System.out.println("valeurarc " + valeurarc);
+        boolean negatif = ValeurArc.valeurnegtive(graphe);
+        System.out.println("arcnegatif "+ negatif);
+        if (entrees == false) {
+            builder.append("Il y a plus d'une entree\n");
+        } else {
+            builder.append("Il n'y a qu'une entree\n");
+        }
+        if (sorties == false) {
+            builder.append("Il y a plus d'une sortie\n");
+        } else {
+            builder.append("Il n'y a qu'une sortie\n");
+        }
+        if (verifentree == false) {
+            builder.append("Un ou plusieurs arcs incidents vers l’extérieur au point d’entrée ne sont pas de valeur nulle\n");
+        } else {
+            builder.append("Les arcs incidents vers l’extérieur au(x) point(s) d’entrée sont de valeur nulle\n");
+        }
+        if (valeurarc == false) {
+            builder.append("Les valeurs ne sont pas identiques pour tous les arcs incidents vers l’extérieur à un sommet\n");
+        } else {
+            builder.append("Les valeurs sont identiques pour tous les arcs incidents vers l’extérieur à un sommet\n");
+        }
+        if(negatif == false)
+            builder.append("Le graphe possède un ou plusieurs arc(s) avec des valeurs négatives\n");
+        else
+            builder.append("Le graphe ne possède aucun arc avec une valeur négative\n");
+        
+        if(entrees && sorties && verifentree && valeurarc && negatif)
+            builder.append("Le graphe est un graphe d'ordonnancement correct \n");
+        else
+            builder.append("Le graphe n'est pas un graphe d'ordonnancement correct\n");
+        
+        try {
+            resultat.writetoFile(builder.toString());
+        } catch (IOException ex) {
+            Logger.getLogger(Builder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
 }
