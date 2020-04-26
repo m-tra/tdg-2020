@@ -1,7 +1,9 @@
 package tga_algo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-public class Graphe {
+public class Graphe implements Serializable{
+    
     private int nb_sommets;
     private int nb_arcs;
     private ArrayList<Arc> arcs;
@@ -46,7 +48,6 @@ public class Graphe {
         this.arcs = arcs;
         this.sommets = sommets;
     }
-    
     
 
 }

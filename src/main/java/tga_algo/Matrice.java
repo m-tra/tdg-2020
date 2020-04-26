@@ -1,7 +1,5 @@
 package tga_algo;
 
-import java.util.Arrays;
-
 
 public class Matrice {
 

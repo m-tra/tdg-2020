@@ -29,7 +29,8 @@ public class Main {
                 System.out.println("Ecriture du tableau 2D dans le fichier");
                 ecrit.matrices();
                 ecrit.Circuit();
-
+                System.out.println("\n");
+                ecrit.calculRang();
             }
             else{
                 System.exit(0);

@@ -11,6 +11,7 @@ public class Builder {
     private Graphe graphe;
     private int nbarcs;
     private int nbsommets;
+    
 
     public Builder(Graphe graphe, String ngraphe) {
         this.graphe = graphe;
@@ -27,11 +28,7 @@ public class Builder {
         this.graphe = graphe;
     }
 
-    public Builder() {
-    }
-
     public void carac() {
-
         try {
             resultat.writetoFile(String.valueOf(nbsommets) + " sommets");
             resultat.writetoFile(String.valueOf(nbarcs) + " arcs");
@@ -107,14 +104,24 @@ public class Builder {
 
     public void Circuit() {
         builder = new StringBuilder();
+        Graphe clone = DeepCopy.copy(graphe);
         Circuit circuit = new Circuit();
         builder.append("\n");
         if (circuit.exist_cicruit(graphe) == true) {
             System.out.println("il y a au moins un circuit");
             builder.append("Il y a au moins un circuit");
-        }
-        else
+        } else {
             System.out.println("il n'y a pas de circuit");
-        builder.append("Il n'y a pas de circuit");
+        }
+        try {
+            resultat.writetoFile(builder.toString());
+        } catch (IOException ex) {
+            Logger.getLogger(Builder.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        graphe = clone;
+    }
+
+    public void calculRang() {
+        
     }
 }

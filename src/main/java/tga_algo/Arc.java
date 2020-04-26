@@ -1,6 +1,8 @@
 package tga_algo;
 
-public class Arc {
+import java.io.Serializable;
+
+public class Arc implements Serializable{
     private int debut;
     private int fin;
     private int valeur;

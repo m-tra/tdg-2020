@@ -1,8 +1,9 @@
 package tga_algo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Sommet {
+public class Sommet implements Serializable{
 
     private ArrayList<Integer> predec;
     private ArrayList<Integer> suiv;
