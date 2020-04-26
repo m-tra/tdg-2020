@@ -10,7 +10,6 @@ public class Circuit {
     }
 
     public boolean exist_cicruit(Graphe actual) {
-        Graphe temp = actual;
         List<Integer> rmv = new ArrayList<>();
         SommetVide S = new SommetVide();
         do {
@@ -40,10 +39,8 @@ public class Circuit {
             System.out.println("rmv " + rmv);
         } while (!rmv.isEmpty());
         if (actual.getSommets().isEmpty()) {
-            actual = temp;
             return false;
         } else {
-            actual=temp;
             return true;
         }
     }
