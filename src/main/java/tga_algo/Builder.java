@@ -1,6 +1,10 @@
 package tga_algo;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -122,6 +126,19 @@ public class Builder {
     }
 
     public void calculRang() {
-        
+        builder = new StringBuilder();
+        Graphe clone = DeepCopy.copy(graphe);
+        ArrayList<ArrayList<Integer>> rangs;
+        rangs = Rang.rang(clone);
+        builder.append("\n");
+        for(int i =0; i<rangs.size()-1; i++){
+            builder.append("rang ").append(i).append(" :");
+            builder.append(rangs.get(i)).append("\n");
+        }
+        try {
+            resultat.writetoFile(builder.toString());
+        } catch (IOException ex) {
+            Logger.getLogger(Builder.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
