@@ -25,7 +25,6 @@ public class Matrice {
             int a = graphe.getArcs().get(i).getDebut();//lecture du sommet de départ de l'arc
             int b = graphe.getArcs().get(i).getFin();//lecture du sommet d'arrivée de l'arc
             matrice[a][b] = 1;
-            matrice[b][a] = 1;
         }
         System.out.println("la longueur est");
         System.out.println(matrice.length);

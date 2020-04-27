@@ -18,14 +18,11 @@ public class Rang {
             for (int i = 0; i < actual.getSommets().size(); i++) {
                 if (actual.getSommets().get(i).getPredec().isEmpty()) {
                     rmv.add(actual.getSommets().get(i).getValeur());
-                } else if (actual.getSommets().get(i).getSuiv().isEmpty()) {
-                    rmv.add(actual.getSommets().get(i).getValeur());
-                }
+                } 
             }
             for (int i = 0; i < actual.getSommets().size(); i++) {
                 for (int j = 0; j < rmv.size(); j++) {
                     actual.getSommets().get(i).removePre(rmv.get(j));
-                    actual.getSommets().get(i).removeSuiv(rmv.get(j));
                 }
             }
             System.out.println(actual.getSommets().size());
