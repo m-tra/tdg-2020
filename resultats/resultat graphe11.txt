@@ -1,0 +1,56 @@
+11 sommets
+13 arcs
+6 -> 3 = 6
+3 -> 0 = 3
+6 -> 10 = 6
+10 -> 1 = 10
+1 -> 9 = 1
+9 -> 4 = 9
+4 -> 5 = 4
+5 -> 8 = 5
+8 -> 9 = 8
+8 -> 0 = 8
+7 -> 8 = 7
+7 -> 2 = 7
+2 -> 0 = 2
+
+  0 1 2 3 4 5 6 7 8 9 10 
+0 0 0 0 0 0 0 0 0 0 0 0
+1 0 0 0 0 0 0 0 0 0 1 0
+2 1 0 0 0 0 0 0 0 0 0 0
+3 1 0 0 0 0 0 0 0 0 0 0
+4 0 0 0 0 0 1 0 0 0 0 0
+5 0 0 0 0 0 0 0 0 1 0 0
+6 0 0 0 1 0 0 0 0 0 0 1
+7 0 0 1 0 0 0 0 0 1 0 0
+8 1 0 0 0 0 0 0 0 0 1 0
+9 0 0 0 0 1 0 0 0 0 0 0
+10 0 1 0 0 0 0 0 0 0 0 0
+
+  0 1 2 3 4 5 6 7 8 9 10 
+0 _ _ 2 3 _ _ _ _ 8 _ _
+1 _ _ _ _ _ _ _ _ _ 1 10
+2 2 _ _ _ _ _ _ 7 _ _ _
+3 3 _ _ _ _ _ 6 _ _ _ _
+4 _ _ _ _ _ 4 _ _ _ 9 _
+5 _ _ _ _ 4 _ _ _ 5 _ _
+6 _ _ _ 6 _ _ _ _ _ _ 6
+7 _ _ 7 _ _ _ _ _ 7 _ _
+8 8 _ _ _ _ 5 _ 7 _ 8 _
+9 _ 1 _ _ 9 _ _ _ 8 _ _
+10 _ 10 _ _ _ _ 6 _ _ _ _
+
+
+Il y a au moins un circuit
+
+rang 1 :[6, 7]
+rang 2 :[2, 3, 10]
+rang 3 :[1]
+
+
+Il y a plus d'une entree
+Il n'y a qu'une sortie
+Un ou plusieurs arcs incidents vers l’extérieur au point d’entrée ne sont pas de valeur nulle
+Les valeurs sont identiques pour tous les arcs incidents vers l’extérieur à un sommet
+Le graphe ne possède aucun arc avec une valeur négative
+Le graphe n'est pas un graphe d'ordonnancement correct
