@@ -134,7 +134,7 @@ public class Builder {
         rangs = Rang.rang(clone);
         builder.append("\n");
         for (int i = 0; i < rangs.size() - 1; i++) {
-            builder.append("rang ").append(i).append(" :");
+            builder.append("rang ").append(i+1).append(" :");
             builder.append(rangs.get(i)).append("\n");
         }
         try {
