@@ -48,7 +48,6 @@ public class Matrice {
             int a = graphe.getArcs().get(i).getDebut();//lecture du sommet de départ de l'arc
             int b = graphe.getArcs().get(i).getFin();//lecture du sommet d'arrivée de l'arc
             matrice[a][b] = Integer.toString(val);
-            matrice[b][a] = matrice[a][b];
         }
         return matrice;
     }
