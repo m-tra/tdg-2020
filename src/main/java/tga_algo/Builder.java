@@ -62,17 +62,17 @@ public class Builder {
         matrice.setGraphe(graphe);
         adj = matrice.calculadj();
         val = matrice.calculval();
-        builder.append("\n").append("  ");
+        builder.append("\n").append("\t");
         for (int i = 0; i < adj.length; i++) {
-            builder.append(i).append(" ");
+            builder.append(i).append("\t");
         }
         builder.append("\n");
         for (int i = 0; i < adj.length; i++) {
-            builder.append(i).append(" ");
+            builder.append(i).append("\t");
             for (int j = 0; j < adj.length; j++) {
                 builder.append(adj[i][j]).append("");
                 if (j < adj.length - 1) {
-                    builder.append(" ");
+                    builder.append("\t");
                 }
             }
             builder.append("\n");
@@ -84,17 +84,17 @@ public class Builder {
         }
 
         builder.setLength(0);
-        builder.append("  ");
+        builder.append("\t");
         for (int i = 0; i < val.length; i++) {
-            builder.append(i).append(" ");
+            builder.append(i).append("\t");
         }
         builder.append("\n");
         for (int i = 0; i < val.length; i++) {
-            builder.append(i).append(" ");
+            builder.append(i).append("\t");
             for (int j = 0; j < val.length; j++) {
                 builder.append(val[i][j]).append("");
                 if (j < adj.length - 1) {
-                    builder.append(" ");
+                    builder.append("\t");
                 }
             }
             builder.append("\n");
