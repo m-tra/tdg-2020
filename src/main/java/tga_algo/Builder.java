@@ -2,9 +2,6 @@ package tga_algo;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -117,6 +114,7 @@ public class Builder {
             presencecircuit = true;
         } else {
             System.out.println("il n'y a pas de circuit");
+            builder.append("Il n'y a pas de circuit");
             presencecircuit = false;
         }
         try {
@@ -146,6 +144,7 @@ public class Builder {
 
     public void Ordonnacement() {
         builder = new StringBuilder();
+        
         boolean entrees = Entree.Nb_entrees(graphe);
         System.out.println("entree " + entrees + "\n");
         boolean sorties = Sortie.Nb_sorties(graphe);
@@ -182,7 +181,7 @@ public class Builder {
         else
             builder.append("Le graphe ne possède aucun arc avec une valeur négative\n");
         
-        if(entrees && sorties && verifentree && valeurarc && negatif)
+        if(entrees && sorties && verifentree && valeurarc && negatif &&!presencecircuit)
             builder.append("Le graphe est un graphe d'ordonnancement correct \n");
         else
             builder.append("Le graphe n'est pas un graphe d'ordonnancement correct\n");
