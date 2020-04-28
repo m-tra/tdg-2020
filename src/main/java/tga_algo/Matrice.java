@@ -36,7 +36,7 @@ public class Matrice {
         for(int i = 0; i< taille; i++)
         {
             for(int j = 0; j< taille; j++){
-                matrice[i][j] ="_";
+                matrice[i][j] ="-";
             }
         }
         for (int i = 0; i < graphe.getNb_arcs(); i++) {

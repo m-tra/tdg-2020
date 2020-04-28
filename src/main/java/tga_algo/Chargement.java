@@ -38,7 +38,6 @@ public class Chargement {
                 sommets.get(suiv).addPredec(pre);
             }
             nouveaugraphe = new Graphe(Integer.parseInt(tempsommets), Integer.parseInt(temparcs), arcs, sommets);
-            nouveaugraphe.setSommets(sommets);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
