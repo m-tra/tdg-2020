@@ -12,8 +12,7 @@ public class Chargement {
     private Graphe graphelu;
     
     public Graphe Initialize(String ngraphe) {
-        int nbsommets=0, nbarcs=0;
-        
+
         Graphe nouveaugraphe = null;
         String s = "graphe " + ngraphe + ".txt";        
         try (Scanner parser = new Scanner(new FileReader("./graphes/"+s))) {
@@ -40,8 +39,6 @@ public class Chargement {
             }
             nouveaugraphe = new Graphe(Integer.parseInt(tempsommets), Integer.parseInt(temparcs), arcs, sommets);
             nouveaugraphe.setSommets(sommets);
-            nbarcs = nouveaugraphe.getNb_arcs();
-            nbsommets = nouveaugraphe.getNb_sommets();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
