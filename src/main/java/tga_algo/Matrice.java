@@ -4,8 +4,6 @@ package tga_algo;
 public class Matrice {
 
     private Graphe graphe;
-    private int[][] adjacence;
-    private String[][] valeurs;
 
     public void setGraphe(Graphe graphe) {
         this.graphe = graphe;
