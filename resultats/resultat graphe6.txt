@@ -48,7 +48,7 @@
 11	_	_	_	_	_	_	_	_	_	_	_	_
 
 
-
+Il n'y a pas de circuit
 
 rang 1 :[0]
 rang 2 :[4, 5, 6, 7, 10]

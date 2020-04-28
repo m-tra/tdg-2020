@@ -57,4 +57,4 @@ Il n'y a qu'une sortie
 Les arcs incidents vers l’extérieur au(x) point(s) d’entrée sont de valeur nulle
 Les valeurs sont identiques pour tous les arcs incidents vers l’extérieur à un sommet
 Le graphe ne possède aucun arc avec une valeur négative
-Le graphe est un graphe d'ordonnancement correct 
+Le graphe n'est pas un graphe d'ordonnancement correct
